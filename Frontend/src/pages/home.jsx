@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { animate, stagger } from "animejs";
 import Navbar from "./components/navbar.jsx";
-import Footer from "./components/footer.jsx";
+import Footer from "./components/footer.jsx"
 
 export default function Home() {
   return (
@@ -268,10 +268,9 @@ function Hero() {
           </div>
         </div>
         <img
-          src="/brand/beras.png"
+          src="/img/LittleRio.png"
           alt="brand-product"
-          width="600"
-          className="absolute top-70 right-0 opacity-50 select-none sm:top-30 md:top-70 lg:top-15 xl:top-1/7 xl:right-30"
+          className="absolute top-70 right-0 opacity-50 select-none sm:top-30 md:top-70 lg:top-15 lg:scale-150 xl:top-1/5 xl:right-30 xl:scale-200"
         />
       </section>
     </div>
@@ -895,9 +894,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Organik.svg"
+                    src="/img/hinabobok2.png"
                     alt="Organik"
-                    width="100"
                   />
                 </motion.div>
 
@@ -929,21 +927,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Organik.svg" alt="Organik" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Organik.svg"
+                          src="/img/hinabobok2.png"
                           alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Organik
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1032,9 +1030,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Bebas-kimia.svg"
-                    alt="Tanpa Kimia"
-                    width="100"
+                    src="/img/hinabobok2.png"
+                    alt="Organik"
                   />
                 </motion.div>
 
@@ -1066,21 +1063,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Bebas-kimia.svg" alt="Tanpa Kimia" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Bebas-kimia.svg"
-                          alt="Tanpa Kimia"
+                          src="/img/hinabobok2.png"
+                          alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Bebas Bahan Kimia
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1169,9 +1166,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Higienis.png"
-                    alt="Higienis"
-                    width="100"
+                    src="/img/hinabobok2.png"
+                    alt="Organik"
                   />
                 </motion.div>
 
@@ -1203,21 +1199,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Higienis.png" alt="Higienis" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Higienis.png"
-                          alt="Higienis"
+                          src="/img/hinabobok2.png"
+                          alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Kemasan Higienis
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1306,9 +1302,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Dari-Petani.svg"
-                    alt="Petani"
-                    width="100"
+                    src="/img/hinabobok2.png"
+                    alt="Organik"
                   />
                 </motion.div>
 
@@ -1340,21 +1335,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Dari-Petani.svg" alt="Petani" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Dari-Petani.svg"
-                          alt="Petani"
+                          src="/img/hinabobok2.png"
+                          alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Langsung Dari Petani
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1443,9 +1438,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Terjangkau.svg"
-                    alt="Terjangkau"
-                    width="100"
+                    src="/img/hinabobok2.png"
+                    alt="Organik"
                   />
                 </motion.div>
 
@@ -1477,21 +1471,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Terjangkau.svg" alt="Terjangkau" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Terjangkau.svg"
-                          alt="Terjangkau"
+                          src="/img/hinabobok2.png"
+                          alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Harga Terjangkau
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1580,9 +1574,8 @@ function Advantages() {
                       stiffness: 150,
                       damping: 15,
                     }}
-                    src="/advantages/Pengiriman-Cepat.svg"
-                    alt="Pengiriman"
-                    width="100"
+                    src="/img/hinabobok2.png"
+                    alt="Organik"
                   />
                 </motion.div>
 
@@ -1614,21 +1607,21 @@ function Advantages() {
                     }}
                     className="absolute top-1/2 left-1/2 z-2 hidden h-49 w-49 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-side lg:flex"
                   >
-                    <img src="/advantages/Pengiriman-Cepat.svg" alt="Pengiriman" width="50" />
+                    <img src="/img/hinabobok2.png" alt="Organik" width="50" />
                   </motion.div>
 
                   <div className="h-full w-full p-5">
                     <div className="mb-5 flex items-center gap-5">
                       <div className="flex h-15 w-15 items-center justify-center rounded-full bg-side">
                         <img
-                          src="/advantages/Pengiriman-Cepat.svg"
-                          alt="Pengiriman"
+                          src="/img/hinabobok2.png"
+                          alt="Organik"
                           width="40"
                         />
                       </div>
 
                       <h3 className="font-extrabold text-accentThrd">
-                        Pengiriman Cepat
+                        Hina Bobok
                       </h3>
                     </div>
 
@@ -1960,10 +1953,10 @@ function About() {
                 </div>
 
                 <div className="h-content relative h-fit max-w-lg lg:max-w-2xl lg:opacity-0">
-                  <div className="h-c-deco1 scale-60 xl:scale-100 absolute -top-1/8 -left-1/13 -z-1 hidden h-50 w-40 rounded-sm bg-side/50 lg:block lg:opacity-0" />
-                  <div className="h-c-deco1 scale-60 xl:scale-100 absolute -right-1/12 -bottom-1/8 -z-2 hidden h-50 w-40 rounded-sm bg-accentThrd/50 lg:block lg:opacity-0" />
-                  <div className="h-c-deco2 scale-60 xl:scale-100 absolute -top-1/9 left-1/2 -z-1 hidden h-2 w-40 rounded-sm bg-side/50 lg:block lg:opacity-0" />
-                  <div className="h-c-deco2 scale-60 xl:scale-100 absolute right-1/2 -bottom-1/9 -z-1 hidden h-2 w-40 rounded-sm bg-primary/50 lg:block lg:opacity-0" />
+                  <div className="h-c-deco1 absolute -top-1/8 -left-1/7 -z-1 hidden h-50 w-40 rounded-sm bg-side/50 lg:block lg:opacity-0" />
+                  <div className="h-c-deco1 absolute -right-1/12 -bottom-1/8 -z-2 hidden h-50 w-40 rounded-sm bg-accentThrd/50 lg:block lg:opacity-0" />
+                  <div className="h-c-deco2 absolute -top-1/9 left-1/2 -z-1 hidden h-2 w-40 rounded-sm bg-side/50 lg:block lg:opacity-0" />
+                  <div className="h-c-deco2 absolute right-1/2 -bottom-1/9 -z-1 hidden h-2 w-40 rounded-sm bg-primary/50 lg:block lg:opacity-0" />
 
                   <div className="h-p-box overflow-hidden rounded-sm border-2 border-accentThrd bg-tertiary p-3 shadow-lg">
                     <p className="h-parag text-justify text-xs font-medium text-quaternary select-none lg:text-sm">
@@ -2004,11 +1997,11 @@ function About() {
                   </div>
 
                   <div className="h-img-deco1 absolute -top-1/7 -left-1/8 -z-1 h-60 w-80 rounded-sm bg-linear-to-tr from-primary/70 to-side/70 lg:opacity-0" />
-                  <div className="h-img-deco1 scale-60 xl:scale-100 absolute -top-1/9 left-1/2 -z-1 h-20 w-20 rounded-sm bg-side/70 lg:opacity-0" />
-                  <div className="h-img-deco2 scale-60 xl:scale-100 absolute -top-1/7 -right-1/15 -z-1 h-90 w-40 rounded-sm bg-primary/70 lg:opacity-0" />
-                  <div className="h-img-deco2 scale-60 xl:scale-100 absolute -bottom-1/7 left-1/8 -z-1 h-70 w-80 rounded-sm bg-tertiary/70 lg:opacity-0" />
-                  <div className="h-img-deco3 scale-60 xl:scale-100 absolute -bottom-1/9 left-1/3 -z-1 h-90 w-80 rounded-sm bg-linear-to-tr from-side/70 to-primary/70 lg:opacity-0" />
-                  <div className="h-img-deco3 scale-60 xl:scale-100 absolute -bottom-1/9 -left-1/12 -z-1 h-20 w-20 rounded-sm bg-side/70 lg:opacity-0" />
+                  <div className="h-img-deco1 absolute -top-1/9 left-1/2 -z-1 h-20 w-20 rounded-sm bg-side/70 lg:opacity-0" />
+                  <div className="h-img-deco2 absolute -top-1/7 -right-1/10 -z-1 h-90 w-40 rounded-sm bg-primary/70 lg:opacity-0" />
+                  <div className="h-img-deco2 absolute -bottom-1/7 left-1/8 -z-1 h-70 w-80 rounded-sm bg-tertiary/70 lg:opacity-0" />
+                  <div className="h-img-deco3 absolute -bottom-1/9 left-1/2 -z-1 h-90 w-80 rounded-sm bg-linear-to-tr from-side/70 to-primary/70 lg:opacity-0" />
+                  <div className="h-img-deco3 absolute -bottom-1/9 -left-1/12 -z-1 h-20 w-20 rounded-sm bg-side/70 lg:opacity-0" />
                 </div>
               </div>
             </div>

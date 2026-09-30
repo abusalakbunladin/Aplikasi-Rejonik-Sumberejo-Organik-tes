@@ -4221,7 +4221,7 @@ function Order() {
                 </p>
 
                 <div className="flex flex-row gap-5">
-                  <a href="#">
+                  <a href="/pesan">
                     <motion.button
                       initial={{
                         scale: 1,

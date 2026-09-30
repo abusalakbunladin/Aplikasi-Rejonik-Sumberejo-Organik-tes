@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/home.jsx"
+import Pesan from "./pages/order.jsx"
 
 import { AuthProvider, ProtectedRoute } from "./admin/authContext.jsx"
 import AdminLayout from "./admin/components/adminLayout.jsx"
@@ -23,6 +24,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pesan" element={<Pesan />} />
 
           <Route path="/admin/login" element={<Login />} />
 

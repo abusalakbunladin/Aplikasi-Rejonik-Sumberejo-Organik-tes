@@ -59,11 +59,11 @@ class PenerimaanBahanBaku(Base):
 
     @property
     def berat_sudah_digiling(self) -> float:
-        return sum(g.berat_masuk_kg for g in self.penggilingan)
-
+        return round(sum(g.berat_masuk_kg for g in self.penggilingan), 6)
+    
     @property
     def berat_sisa_kg(self) -> float:
-        return self.berat_kg - self.berat_sudah_digiling
+        return round(self.berat_kg - self.berat_sudah_digiling, 6)
 
 class Penggilingan(Base):
     __tablename__ = "penggilingan"
@@ -77,7 +77,7 @@ class Penggilingan(Base):
 
     @property
     def susut_kg(self) -> float:
-        return self.berat_masuk_kg - self.berat_hasil_kg
+        return round(self.berat_masuk_kg - self.berat_hasil_kg, 6)
 
     @property
     def rendemen(self) -> float:
@@ -117,6 +117,7 @@ class Order(Base):
     status_konfirmasi = Column(String(20), nullable=False, default="menunggu", server_default="menunggu")
 
     ongkir = Column(Integer, nullable=False, default=0, server_default="0")
+    metode = Column(String(10), nullable=False, default="kirim", server_default="kirim")
 
     items = relationship("OrderItem", back_populates="order", cascade="all, delete-orphan")
 

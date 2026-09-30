@@ -1,7 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+
+// Halaman publik
 import Home from "./pages/home.jsx"
+import Product from "./pages/product.jsx"
+import Advantages from "./pages/advantages.jsx"
+import About from "./pages/about.jsx"
+import Certificate from "./pages/certificate.jsx"
+import Contact from "./pages/contact.jsx"
 import Pesan from "./pages/order.jsx"
 
+// Panel admin
 import { AuthProvider, ProtectedRoute } from "./admin/authContext.jsx"
 import AdminLayout from "./admin/components/adminLayout.jsx"
 import Login from "./admin/pages/login.jsx"
@@ -24,6 +32,11 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/produk" element={<Product />} />
+          <Route path="/keunggulan" element={<Advantages />} />
+          <Route path="/tentang" element={<About />} />
+          <Route path="/sertifikat" element={<Certificate />} />
+          <Route path="/kontak" element={<Contact />} />
           <Route path="/pesan" element={<Pesan />} />
 
           <Route path="/admin/login" element={<Login />} />
@@ -48,9 +61,11 @@ export default function App() {
             <Route path="penyesuaian-stok" element={<PenyesuaianStok />} />
             <Route path="laporan" element={<Laporan />} />
           </Route>
+
+          {/* Alamat yang tidak dikenal (mis. tautan footer /review, /FAQ, /Help) kembali ke beranda */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
   )
 }
-

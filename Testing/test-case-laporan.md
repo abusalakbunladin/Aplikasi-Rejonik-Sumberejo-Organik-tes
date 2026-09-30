@@ -17,7 +17,7 @@
 
 | No | Test Case | Langkah Pengujian | Data Uji | Expected Result | Actual Result | Status | Keterangan |
 |----|-----------|--------------------|----------|------------------|----------------|--------|------------|
-| 3 | Parameter batas diisi angka negatif | 1. GET /laporan/stok-rendah?batas=-5 | `?batas=-5` | Idealnya divalidasi, atau minimal tidak menampilkan data salah | 200 OK — hasil kosong `[]`, tidak crash tapi tidak ada validasi format nilai batas | **Minor** | Perlu dikonfirmasi ke tim |
+| 3 | Parameter batas diisi angka negatif | 1. GET /laporan/stok-rendah?batas=-5 | `?batas=-5` | Idealnya divalidasi, atau minimal tidak menampilkan data salah | 200 OK — hasil kosong `[]`, tidak crash tapi tidak ada validasi format nilai batas | **Bug** | sudah di fix |
 | 4 | Parameter batas diisi huruf (bukan angka) | 1. GET /laporan/stok-rendah?batas=abc | `?batas=abc` | Sistem menolak (validasi tipe data) | 422 Unprocessable Entity | **Pass** | - |
 
 ---
@@ -51,7 +51,7 @@
 | 15 | Penggilingan dari penerimaan yang belum lolos mutu (masih "menunggu") | 1. POST /penggilingan dengan penerimaan_id berstatus "menunggu" | `{"penerimaan_id": 2, "berat_masuk_kg": 10, "berat_hasil_kg": 6}` | Sistem menolak (400) | 400 Bad Request — bahan baku harus berstatus "lolos" sebelum bisa digiling | **Pass** | - |
 | 16 | berat_hasil_kg lebih besar dari berat_masuk_kg | 1. POST /penggilingan dengan hasil > masuk | `{"penerimaan_id": 1, "berat_masuk_kg": 10, "berat_hasil_kg": 20}` | Sistem menolak (400) | 400 Bad Request — berat hasil tidak boleh melebihi berat masuk | **Pass** | - |
 | 17 | berat_masuk_kg melebihi sisa bahan baku yang tersedia | 1. POST /penggilingan dengan berat_masuk_kg > sisa | `{"penerimaan_id": 1, "berat_masuk_kg": 9999, "berat_hasil_kg": 100}` | Sistem menolak (400) | 400 Bad Request — berat masuk melebihi sisa bahan baku yang belum digiling | **Pass** | - |
-| 18 | Rendemen 100% (berat masuk = berat hasil, tanpa penyusutan) | 1. POST /penggilingan dengan berat_masuk_kg = berat_hasil_kg | `{"penerimaan_id": 1, "berat_masuk_kg": 20, "berat_hasil_kg": 20}` | Sistem menolak — secara fisik gabah digiling jadi beras pasti ada penyusutan (kulit/sekam), rendemen 100% tidak realistis | **BUG (sebelum fix):** 200 OK, sistem menerima rendemen 100% tanpa validasi batas wajar.<br>**Setelah dilaporkan & diperbaiki tim backend:** 400 Bad Request, rendemen 100% berhasil ditolak | **Bug** | Sudah di fix |
+| 18 | Rendemen 100% (berat masuk = berat hasil, tanpa penyusutan) | 1. POST /penggilingan dengan berat_masuk_kg = berat_hasil_kg | `{"penerimaan_id": 1, "berat_masuk_kg": 20, "berat_hasil_kg": 20}` | Sistem menolak — secara fisik gabah digiling jadi beras pasti ada penyusutan (kulit/sekam), rendemen 100% tidak realistis | 200 OK, sistem menerima rendemen 100% tanpa validasi batas wajar.<br>**Setelah dilaporkan & diperbaiki tim backend:** 400 Bad Request, rendemen 100% berhasil ditolak | **Bug** | Sudah di fix |
 | 19 | penerimaan_id tidak ada di database | 1. POST /penggilingan dengan penerimaan_id tidak valid | `{"penerimaan_id": 9999, "berat_masuk_kg": 10, "berat_hasil_kg": 6}` | Sistem menolak (404) | 404 Not Found — penerimaan tidak ditemukan | **Pass** | - |
 | 20 | Daftar penggilingan tampil dengan benar | 1. GET /penggilingan | - | Data yang sudah dibuat muncul di daftar | 200 OK — data penggilingan id: 1 muncul dengan rendemen 0.64 | **Pass** | - |
 
@@ -70,6 +70,7 @@
 | 24 | produk_varian_id tidak ada di database | 1. POST /pengemasan dengan produk_varian_id tidak valid | `{"produk_varian_id": 9999, "jumlah_pcs": 1}` | Sistem menolak (404) | 404 Not Found — varian produk tidak ditemukan | **Pass** | - |
 | 25 | jumlah_pcs 0 atau negatif | 1. POST /pengemasan dengan jumlah_pcs = 0 | `{"produk_varian_id": 1, "jumlah_pcs": 0}` | Sistem menolak (422) | 422 Unprocessable Entity — jumlah_pcs harus lebih besar dari 0 | **Pass** | - |
 | 26 | Verifikasi stok bertambah & daftar pengemasan tampil benar | 1. GET /pengemasan (cek No. 22 muncul)<br>2. GET /produk-varian (cek stok varian id 1 bertambah sesuai No. 22) | - | Data pengemasan muncul, stok varian terupdate sesuai jumlah yang dikemas | 200 OK — data pengemasan No. 22 muncul di daftar, stok varian id 1 terkonfirmasi bertambah 6 sesuai jumlah yang dikemas | **Pass** | - |
+| 27 | Catatan penerimaan melebihi batas panjang kolom (256 karakter) | 1. Login sebagai admin<br>2. POST /penerimaan dengan catatan 256 karakter | `{"pemasok_id": 1, "produk_id": 4, "berat_kg": 5, "catatan": "A x 256"}` | Sistem menolak (422), karena kolom database maksimal 255 karakter | [isi] — tidak ditolak dengan 422 (skema tidak punya max_length) | **Bug** | Belum di fix |
 
 ---
 **Catatan struktur:**

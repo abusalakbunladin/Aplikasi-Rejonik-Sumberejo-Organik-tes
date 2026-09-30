@@ -5,6 +5,11 @@ section {
     font-family: Inter;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 @theme {
     --color-primary: #1B5200;
     --color-secondary: #0F7D00;
@@ -25,5 +30,17 @@ section {
 @layer components {
     .hamburg-line {
         @apply w-7.5 h-0.5 block rounded-full
+    }
+
+    .t-hnd {
+        @apply p-5
+    }
+
+    .t-contain {
+        @apply outline outline-quaternary
+    }
+
+    .t-content {
+        @apply outline outline-quaternary lg:outline-0
     }
 }
